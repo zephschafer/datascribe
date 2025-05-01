@@ -13,24 +13,26 @@ The MCP Servier helps any MCP-compatible LLM application generate rich data docu
 Use Claude desktop to locate the `claude_desktop_config.json` file by navigating to **Settings > Developer > Edit Config**. Add the following configuration. (Note that datascribe requires the [Filesystem MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem)):
 
 ```
-"mcpServers": {
-    "filesystem": {
-        "command": "npx",
-        "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/Users/username/Desktop",
-        "/path/to/other/allowed/dir"
-        ]
-    },
-    "datascribe": {
-        "command": "uv",
-        "args": [
-            "--directory",
-            "/your/path/to/datascribe/repo",
-            "run",
-            "datascribe/datascribe.py"
-        ]
+{
+    "mcpServers": {
+        "filesystem": {
+            "command": "npx",
+            "args": [
+            "-y",
+            "@modelcontextprotocol/server-filesystem",
+            "/Users/username/Desktop",
+            "/path/to/other/allowed/dir"
+            ]
+        },
+        "datascribe": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "/your/path/to/datascribe/repo",
+                "run",
+                "datascribe/datascribe.py"
+            ]
+        }
     }
 }
 ```
